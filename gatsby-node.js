@@ -22,3 +22,4 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
       },
     },
   });
+};
