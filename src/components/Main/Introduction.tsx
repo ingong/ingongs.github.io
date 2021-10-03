@@ -36,7 +36,7 @@ const Introduction: FunctionComponent = function () {
         <ProfileImage />
         <>
           <SubTitle>Nice to Meet You, </SubTitle>
-          <Title>I'm Junior Frontend Developer Insong.</Title>
+          <Title>I'm Junior Frontend Developer Lee-Insong.</Title>
         </>
       </Wrapper>
     </Background>
