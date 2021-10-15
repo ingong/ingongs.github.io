@@ -1,12 +1,54 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
+import { PostPageItemType } from 'types/PostItem.types'; // 바로 아래에서 정의할 것입니다
+import Template from 'components/Common/Template';
+import PostHead from 'components/Post/PostHead';
 
-type PostTemplateProps = {};
+export type PostPageItemType = {
+  node: {
+    html: string;
+    frontmatter: PostFrontmatterType;
+  };
+};
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = function (props) {
-  console.log(props);
+type PostTemplateProps = {
+  data: {
+    allMarkdownRemark: {
+      edges: PostPageItemType[];
+    };
+  };
+};
 
-  return <div>Post Template</div>;
+const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) {
+  const {
+    node: {
+      html,
+      frontmatter: {
+        title,
+        summary, // 나중에 사용할 예정입니다!
+        date,
+        categories,
+        thumbnail: {
+          childImageSharp: { gatsbyImageData },
+        },
+      },
+    },
+  } = edges[0];
+
+  return (
+    <Template>
+      <PostHead
+        title={title}
+        date={date}
+        categories={categories}
+        thumbnail={gatsbyImageData}
+      />
+    </Template>
+  );
 };
 
 export default PostTemplate;
