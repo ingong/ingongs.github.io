@@ -84,14 +84,17 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   );
 };
 
-export const queryPostList = graphql`
-  query queryPostList {
+export const getPostList = graphql`
+  query getPostList {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
@@ -99,14 +102,7 @@ export const queryPostList = graphql`
             categories
             thumbnail {
               childImageSharp {
-                fluid(
-                  maxWidth: 768
-                  maxHeight: 200
-                  fit: INSIDE
-                  quality: 100
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 768, height: 400)
               }
             }
           }
@@ -115,9 +111,7 @@ export const queryPostList = graphql`
     }
     file(name: { eq: "profile-image" }) {
       childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120, fit: INSIDE, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 120, height: 120)
       }
     }
   }
