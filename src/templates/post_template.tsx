@@ -4,13 +4,6 @@ import { PostPageItemType } from 'types/PostItem.types'; // 바로 아래에서 
 import Template from 'components/Common/Template';
 import PostHead from 'components/Post/PostHead';
 
-export type PostPageItemType = {
-  node: {
-    html: string;
-    frontmatter: PostFrontmatterType;
-  };
-};
-
 type PostTemplateProps = {
   data: {
     allMarkdownRemark: {
