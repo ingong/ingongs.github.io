@@ -37,10 +37,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
-    file: {
-      childImageSharp: { gatsbyImageData },
-      publicURL,
-    },
   },
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
@@ -74,13 +70,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     [],
   );
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
-      <Introduction profileImage={gatsbyImageData} />
+    <Template title={title} description={description} url={siteUrl}>
+      <Introduction />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}

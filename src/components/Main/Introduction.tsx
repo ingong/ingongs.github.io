@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-import ProfileImage, { ProfileImageProps } from 'components/Main/ProfileImage';
-
-type IntroductionProps = ProfileImageProps;
+import { Link } from 'gatsby';
+import { AiFillGithub } from 'react-icons/ai';
 
 const Background = styled.div`
   width: 100%;
@@ -12,50 +11,39 @@ const Background = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   width: 768px;
-  height: 400px;
+  height: 70px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 300px;
+    height: 70px;
     padding: 0 20px;
-  }
-`;
-
-const SubTitle = styled.div`
-  font-size: 20px;
-  font-weight: 400;
-
-  @media (max-width: 768px) {
-    font-size: 15px;
   }
 `;
 
 const Title = styled.div`
   margin-top: 5px;
-  font-size: 35px;
+  font-size: 24px;
   font-weight: 700;
 
   @media (max-width: 768px) {
-    font-size: 25px;
+    font-size: 24px;
   }
 `;
 
-const Introduction: FunctionComponent<IntroductionProps> = function ({
-  profileImage,
-}) {
+const Introduction: FunctionComponent = function () {
   return (
     <Background>
       <Wrapper>
-        <ProfileImage profileImage={profileImage} />
-        <>
-          <SubTitle>Nice to Meet You, </SubTitle>
-          <Title>I'm Junior Frontend Developer Lee-Insong.</Title>
-        </>
+        <Link to={'/'}>
+          <Title>이인송 블로그</Title>
+        </Link>
+        <a href={'https://www.github.com/ingong'}>
+          <AiFillGithub size="30" />
+        </a>
       </Wrapper>
     </Background>
   );

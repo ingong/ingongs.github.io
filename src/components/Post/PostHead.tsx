@@ -1,13 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import PostHeadInfo, { PostHeadInfoProps } from 'components/Post/PostHeadInfo';
-
-type GatsbyImgProps = {
-  image: IGatsbyImageData;
-  alt: string;
-  className?: string;
-};
+import Introduction from 'components/Main/Introduction';
 
 type PostHeadProps = PostHeadInfoProps & {
   thumbnail: IGatsbyImageData;
@@ -16,37 +11,28 @@ type PostHeadProps = PostHeadInfoProps & {
 const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 250px;
 
   @media (max-width: 768px) {
-    height: 300px;
+    height: 200px;
   }
 `;
 
-const BackgroundImage = styled((props: GatsbyImgProps) => (
-  <GatsbyImage {...props} style={{ position: 'absolute' }} />
-))`
-  z-index: -1;
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  filter: brightness(0.25);
-
-  @media (max-width: 768px) {
-    height: 300px;
-  }
-`;
-
+const getDateString = (date: string) => {
+  const DateObj = new Date(date);
+  const MonthString = DateObj.toLocaleString('en-US', { month: 'long' });
+  return `${MonthString} ${DateObj.getDate()},${DateObj.getFullYear()}`;
+};
 const PostHead: FunctionComponent<PostHeadProps> = function ({
   title,
   date,
   categories,
-  thumbnail,
 }) {
+  const DateString = getDateString(date);
   return (
     <PostHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
-      <PostHeadInfo title={title} date={date} categories={categories} />
+      <Introduction />
+      <PostHeadInfo title={title} date={DateString} categories={categories} />
     </PostHeadWrapper>
   );
 };
