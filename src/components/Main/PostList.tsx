@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import PostItem from 'components/Main/PostItem';
 import { FluidObject } from 'gatsby-image';
@@ -28,9 +28,9 @@ interface PostListProps {
 }
 
 const PostListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 768px;
   margin: 0 auto;
   padding: 50px 0 100px;
