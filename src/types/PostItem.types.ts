@@ -4,6 +4,9 @@ export type PostFrontmatterType = {
   categories: string[];
   summary: string;
   thumbnail: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
     publicURL: string;
   };
 };
