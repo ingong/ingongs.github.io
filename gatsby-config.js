@@ -3,8 +3,9 @@ module.exports = {
     title: `이인송 블로그`,
     description: `개발자 이인송의 고민과 학습 내용을 기록하기 위한 블로그입니다`,
     author: `이인송`,
-    siteUrl: `https://ingong.github.io/`,
+    siteUrl: `https://insong-lee.github.io/`,
   },
+  pathPrefix: 'reponame',
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
@@ -16,7 +17,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://ingong.github.io/',
+        siteUrl: 'https://insong-lee.github.io/',
         stripQueryString: true,
       },
     },
