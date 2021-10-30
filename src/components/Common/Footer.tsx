@@ -16,12 +16,7 @@ const FooterWrapper = styled.footer`
 `;
 
 const Footer: FunctionComponent = function () {
-  return (
-    <FooterWrapper>
-      Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2021 Developer Insong, Powered By Gatsby.
-    </FooterWrapper>
-  );
+  return <FooterWrapper>©ingong, Built with Gatsby.</FooterWrapper>;
 };
 
 export default Footer;

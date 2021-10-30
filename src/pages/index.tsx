@@ -1,10 +1,9 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import queryString, { ParsedQuery } from 'query-string';
-import CategoryList from 'components/Main/CategoryList';
-import Introduction from 'components/Main/Introduction';
-import PostList, { PostType } from 'components/Main/PostList';
-import Template from 'components/Common/Template';
-import { ProfileImageProps } from 'components/Main/ProfileImage';
+import CategoryList from '../components/Main/CategoryList';
+import Introduction from '../components/Main/Introduction';
+import PostList, { PostType } from '../components/Main/PostList';
+import Template from '../components/Common/Template';
 import { graphql } from 'gatsby';
 
 type IndexPageProps = {
