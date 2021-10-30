@@ -13,8 +13,16 @@ module.exports = {
         allExtensions: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: '<https://insong-lee.github.io/>',
+        stripQueryString: true,
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
