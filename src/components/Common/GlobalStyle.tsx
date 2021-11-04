@@ -26,6 +26,18 @@ const defaultStyle = css`
     text-decoration: none;
     cursor: pointer;
   }
+
+  p,
+  ol,
+  h1,
+  h2,
+  h3,
+  ul,
+  li,
+  span,
+  div {
+    word-break: keep-all;
+  }
 `;
 
 const GlobalStyle: FunctionComponent = function () {
