@@ -1,29 +1,96 @@
 ---
 date: '2021-10-04'
-title: '변경에 유연한 컴포넌트'
-categories: ['Web', 'SEO', 'Optimization']
-summary: '구글에 SiteMap을 제출하여 사이트에 있는 파일로서 새 페이지나 변경된 페이지가 있을 때 이를 검색 엔진에 알려주도록 할 수 있다. SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관계에 관한 정보를 제공하는 파일로, 검색 엔진은 이를 읽고 사이트를 더 지능적으로 크롤링 할 수 있게 된다.'
+title: '브라우저의 렌더링 방식'
+categories: ['Web']
+summary: '브라우저의 구조를 이해하고, 렌더링 방식을 이해하는 것은 프론트엔드 개발자에게 반드시 필요한 지식이다. 사용자가 URL 을 입력하고, 해당 URL 을 DNS 캐쉬에 있는지 확인하고 아니라면 DNS Server 에서 도메인에 해당하는 IP 를 요청해서 받아온다. 받아온 IP 를 가지고 서버와의 TCP 연결을 수행한다. TCP 연결이 완료되면 서버 호스트에게 HTTP 요청을 통해 해당 리소스를 요청한다...'
 thumbnail: './test.png'
 ---
 
-### 1. Help Google Bot to Find My Contents
+## 브라우저의 기본 구조
 
-구글에 SiteMap을 제출하여 사이트에 있는 파일로서 새 페이지나 변경된 페이지가 있을 때 이를 검색 엔진에 알려주도록 할 수 있다.
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/545597e4-3c81-4ee9-b2b0-14852ea2c02d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211104T151706Z&X-Amz-Expires=86400&X-Amz-Signature=c5c0206ffd94a33b3d3ebe3675d80a05951d79cb23ba3781cb92fbb5d8080112&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" width=500/>
 
-SiteMap은 사이트에 있는 페이지, 동영상 및 기타 파일과 각 관계에 관한 정보를 제공하는 파일로, 검색 엔진은 이를 읽고 사이트를 더 지능적으로 크롤링 할 수 있게 된다.
+1. 사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다.
+2. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다.
+3. 렌더링 엔진 : 요청한 콘텐츠를 표시. 예를 들어 HTML을 요청하면 HTML과 CSS를 파싱하여 화면에 표시한다.
+4. 통신 : HTTP 요청과 같은 네트워크 호출에 사용됨. 이것은 플랫폼 독립적인 인터페이스이고 각 플랫폼 하부에서 실행된다.
+5. UI 백엔드 : 콤보 박스와 창 같은 기본적인 장치를 그림. 플랫폼에서 명시하지 않은 일반적인 인터페이스로서, OS 사용자 인터페이스 체계를 사용한다.
+6. 자바스크립트 해석기 : 자바스크립트 코드를 해석하고 실행한다.
+7. 자료 저장소 : 이 부분은 자료를 저장하는 계층이다. 쿠키를 저장하는 것과 같이 모든 종류의 자원을 하드 디스크에 저장할 필요가 있다. HTML5 명세에는 브라우저가 지원하는 ‘웹 데이터 베이스’가 정의되어 있다.
 
-### 2. Use 'Robots.txt' File
+## 브라우저의 렌더링 과정
 
-Robots.txt 파일은 검색 엔진에 어떤 페이지를 크롤링해도 되는지 알리는 파일로, 서버의 루트 디렉토리에 있어야 한다.
+구글에서 `What happens when you type in google` 을 검색 후 해당 내용을 네이버에 적용해서 작성한 글 입니다. 잘못된 정보가 있다면 댓글로 남겨주시면 확인 후 수정하겠습니다.
 
-과도한 Robots.txt 파일은 더 많은 방문자를 유도할 수 있는 정상적인 검색 엔진 크롤러의 접근을 막을 가능성이 있기 때문에 적절하게 설정해야 한다.
+<img src="https://kyun2da.dev/static/7efd177711cd81dd0712e9dd79eaf12c/c1b63/browser-rendering.png" />
 
----
+### 1. 사용자가 브라우저 주소 표시줄에 [naver.com](http://naver.com) 을 입력
 
-## Source
+### 2. 브라우저는 [naver.com](http://naver.com) 의 해당 IP 주소를 찾기 위해 캐시에 DNS 레코드가 있는지 확인합니다.
 
-- SEO 기본 가이드
+DNS 는 웹 사이트의 이름과 매핑되는 특정 IP 주소를 관리하는 데이터베이스이다. IP 주소는 우리가 접속을 요청하는 웹사이트의 서버를 호스팅하는 컴퓨터에 속한다. DNS 에 대한 내용은 오늘의 주제에서 다루기에 양이 많기 때문에, DNS 는 사용자가 쉽게 웹사이트에 접속할 수 있도록 IP 에 해당하는 이름을 기억하는 인터넷 전화번호부로 기억하시면 좋을 것 같다. 캐시에 DNS 레코드가 있는지 확인하는 과정은 DNS Server 에 접근했던 기록이 캐시의 형태로 남아있다면, 굳이 다시 DNS 서버를 조회할 일이 없기 때문입니다.
 
-  [<https://support.google.com/webmasters/answer/7451184?hl=ko&ref_topic=9460495>](https://support.google.com/webmasters/answer/7451184?hl=ko&ref_topic=9460495)
+### 3. 요청한 URL 에 대한 IP 주소가 DNS 캐시에 존재한다면 해당 IP 에 해당하는 서버와의 TCP 연결을 시작합니다.
 
----
+요청한 URL 이 DNS 캐시에 존재하지 않는다면 DNS query 를 통해서 해당 IP 주소를 받아와야한다. 이후에 서버와의 3-Way Handshaking 을 통해서 TCP 연결을 설정해야한다. 이 과정은 클라이언트와 서버가 SYN 및 ACK 메시지를 교환하여 연결을 설정하는 3단계 프로세스이다. TCP 연결이 구축되어야만 HTTP 요청을 전송할 수 있다.
+
+### 4. 브라우저는 웹 서버에게 HTTP Request를 보내고, Response를 받습니다.
+
+서버는 클라이언트가 요청한 URL 에 따라 결과물을 만들어서 응답한다. 해당 리소스는 HTML, JS, IMG 등등 다양한 리소스가 존재하며, 브라우저는 HTML 을 가장 먼저 다운받는다.
+
+### 5. HTML 리소스 파일 다운로드
+
+### 6. CSS, JS 다운로드
+
+HTML 코드를 파싱하는 과정에서 만나는 CSS, JS 등의 모듈을 다운로드한다.
+
+```html
+<html>
+	<head>
+		<link href="index.css"></link>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		.
+		.
+	</body>
+</html>
+```
+
+### 7. DOM Tree 생성
+
+- 변환 : 브라우저가 HTML 의 원시 바이트를 읽어와서, HTML 에 정의된 인코딩에 맞춰 변환한다.
+- 토큰화 : 브라우저가 문자열을 W3C 에 의한 명세를 기준으로 고유 토큰으로 반환한다.
+- 렉싱 : 만들어진 토큰을 해당 속성 및 규칙을 정의하는 객체로 변환시킨다.
+- DOM 생성 : HTML 마크업에 정의된 여러 태그 간의 관계를 해석해서 노드의 트리 자료구조인 DOM을 생성한다. DOM 이란 HTML 문서의 객체 표현이고 외부를 향하는 자바스크립트와 같은 HTML 요소의 연결 지점이된다.
+  <img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/full-process.png?hl=ko" />
+
+### 8. CSSOM 트리 생성
+
+CSSOM 트리르 생성하는 과정과 동일한 과정으로 CSSOM 트리를 생성한다.
+
+<img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/cssom-construction.png?hl=ko" />
+
+### 9. Render Tree 생성
+
+DOM 트리와 CSSOM 트리가 생성되면, 이 둘을 결합해서 렌더링 트리를 생성한다. 렌더링 트리에는 페이지를 렌더링하는데 필요한 노드만 포함된다.즉, display: none 과 같은 스타일을 갖는 노드는 포함되지 않는다.
+
+### 10. Layout
+
+레이아웃 단계에서는 뷰포트 내에서 각 요소의 정확한 위치와 크기를 정확하게 캡처하는 Box 모델이 출력된다. 이때 브라우저는 렌더링 트리의 루프에서 시작해서 계속 렌더링 트리의 노드를 쫓아간다. 모든 상대적인 측정값(em,rem, % 등)은 화면에서 절대적인 픽셀로 변경된다. 레이아웃이 완료되면 브라우저가 Paint Setup 과 Paint 이벤트를 발생시켜 이 과정에서 연산한 값들과 정보를 다음단계에 전달한다.
+
+<img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/layout-viewport.png?hl=ko" />
+
+### 11. Paint
+
+렌더링 트리와 레이아웃 단계에서 수행한 연산을 바탕으로 렌더링 트리를 화면에 픽셀로 변환하는 작업이다.
+
+### 12. 자바스크립트 파싱과 실행
+
+script 태그를 만나면 마찬가지로 HTML 파싱 과정을 중단하고 자바스크립트 파일을 불러오고 자바스크립트 코드를 파싱한다. 자바스크립트 엔진은 이를 해석하여 `AST(추상적 구문 트리)`를 생성한다. 그리고 AST를 기반으로 인터프리터가 실행할 수 있는 중간 코드인 바이트 코드를 생성하여 실행한다.
+
+## 마무리
+
+JS 는 브라우저와 노드 환경에서 사용할 수 있는 언어이다. 작동하는 환경을 잘 이해하는 것은, 그 언어를 더 잘 이해하는데 필수적이다. 또한 SPAs 의 특성상 많은 양의 데이터를 받아오고, 이를 렌더링하기 때문에 브라우저를 최적화하는 것도 프론트엔드 개발자로서 해결해나가야하는 하나의 과제이다.
+
+브라우저의 구조와 렌더링 과정만 간단하게 다루어 보았다. 이 글에 이어서 브라우저의 최적화 점수를 측정하는 라이트 하우스 툴과 이를 개선하기 위해서는 어떠한 방법을 사용할 수 있는지 작성해보려고 한다.
