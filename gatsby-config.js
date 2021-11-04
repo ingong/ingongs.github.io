@@ -5,7 +5,6 @@ module.exports = {
     author: `이인송`,
     siteUrl: `https://ingong.github.io/`,
   },
-  pathPrefix: 'reponame',
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
