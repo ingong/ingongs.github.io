@@ -23,24 +23,18 @@ const MarkdownRenderer = styled.div`
   font-size: 16px;
   font-weight: 400;
 
-  // Apply Padding Attribute to All Elements
-  p {
-    padding: 3px 0;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-
-  // Adjust Heading Element Style
-
   h2 {
     font-weight: 800;
+    margin-top: 50px;
     margin-bottom: 20px;
-    margin-top: 35px;
+    font-size: 22px;
   }
 
   h3 {
-    margin-top: 35px;
-    margin-bottom: 15px;
-    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 19px;
   }
 
   img {
@@ -65,6 +59,23 @@ const MarkdownRenderer = styled.div`
     line-height: 26px;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  // markDown Style
+  li {
+    line-height: 26px;
+    margin: 0;
+    padding: 2px;
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: 550;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 0;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   // Adjust Horizontal Rule style
@@ -102,18 +113,6 @@ const MarkdownRenderer = styled.div`
     font-size: 16px;
     font-weight: 500;
     margin: 0 auto;
-  }
-
-  li {
-    line-height: 26px;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    padding: 2px;
-    // Markdown Style
-    line-height: 26px;
-    font-size: 16px;
-    font-weight: 500;
   }
 
   // Markdown Responsive Design
