@@ -25,16 +25,23 @@ const MarkdownRenderer = styled.div`
 
   h2 {
     font-weight: 800;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 22px;
+    font-size: 28px;
   }
 
   h3 {
     font-weight: 700;
     margin-top: 20px;
     margin-bottom: 8px;
-    font-size: 19px;
+    font-size: 24px;
+  }
+
+  h4 {
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 22px;
   }
 
   img {
@@ -43,7 +50,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Quotation Element Style
   blockquote {
     margin: 15px 0;
-    padding: 5px 15px;
+    padding: 5px 5px;
     border-left: 2px solid #000000;
     font-weight: 800;
     line-height: 26px;
@@ -54,8 +61,6 @@ const MarkdownRenderer = styled.div`
   // Adjust List Element Style
   ol,
   ul {
-    /* margin-left: 40px; */
-    /* padding: 30px 0; */
     line-height: 26px;
     font-size: 16px;
     font-weight: 500;
@@ -72,10 +77,10 @@ const MarkdownRenderer = styled.div`
   }
 
   p {
-    font-weight: 500;
+    font-weight: 550;
     font-size: 16px;
+    line-height: 26px;
     padding: 5px 0;
-    font-family: 'Noto Sans KR', sans-serif;
   }
 
   // Adjust Horizontal Rule style
@@ -106,13 +111,24 @@ const MarkdownRenderer = styled.div`
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code[class*='language-'] {
     tab-size: 2;
-    line-height: 26px;
+    line-height: 16px;
+    text-align: center;
     font-size: 16px;
     font-weight: 500;
     margin: 0 auto;
+    padding-left: 5px;
+  }
+
+  pre[class*='language-'] {
+    tab-size: 2;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
   }
 
   // Markdown Responsive Design
