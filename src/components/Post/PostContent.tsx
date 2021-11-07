@@ -27,21 +27,21 @@ const MarkdownRenderer = styled.div`
     font-weight: 800;
     margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 26px;
   }
 
   h3 {
     font-weight: 700;
     margin-top: 20px;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 23px;
   }
 
   h4 {
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 8px;
-    font-size: 22px;
+    font-size: 20px;
   }
 
   img {
