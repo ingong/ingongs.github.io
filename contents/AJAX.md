@@ -63,7 +63,7 @@ thumbnail: './test.png'
 - 스크립트로 작성되므로 디버깅이 어렵다.
 - CORS 문제로 다른 도메인과는 통신이 불가능하다.
 
-&nbsp; 웹 개발을 하면서 AJAX 의 단점을 체감해본적은 없다. 아마 보안상의 문제는 지금 개발자를 준비하면서 감은 눈으로 바라보고 있어서 그럴 수도 있을 것 같다. 해당 단점은 웹 보안 관련해서 공부해보면서 알게 될 것 같다.
+웹 개발을 하면서 AJAX 의 단점을 체감해본적은 없다. 아마 보안상의 문제는 지금 개발자를 준비하면서 감은 눈으로 바라보고 있어서 그럴 수도 있을 것 같다. 해당 단점은 웹 보안 관련해서 공부해보면서 알게 될 것 같다.
 
 ## Fetch API 를 폴리필하기 위해서 Babel 을 사용할까?
 
@@ -71,12 +71,12 @@ thumbnail: './test.png'
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/20260b3d-1442-407f-878f-c10a082ed06a/24.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211107%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211107T160005Z&X-Amz-Expires=86400&X-Amz-Signature=c9369edbb328002ded84d6ee755f1c9908626e98ff4f01f3f3c29926e4c65cec&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%2224.png%22" width="300">
 </div>
 
-&nbsp; 웹 개발을 처음 했을 때는 Fetch 를 JS 에서 사용되는 API 중 하나라고 생각했었다. 정말 엄청난 착각이였다. Web API 는 실행 환경이 Web 이며 WHATWG 에서 표준을 관리하고, JS 는 실행 환경이 JS Engine 이며, ECMAScript 에서 표준을 관리한다고 한다.
+웹 개발을 처음 했을 때는 Fetch 를 JS 에서 사용되는 API 중 하나라고 생각했었다. 정말 엄청난 착각이였다. Web API 는 실행 환경이 Web 이며 WHATWG 에서 표준을 관리하고, JS 는 실행 환경이 JS Engine 이며, ECMAScript 에서 표준을 관리한다고 한다.
 
-&nbsp; 즉, Fetch API 는 Babel 을 통한 폴리필이 불가능하다. Babel 은 Ecmascript 스펙만 지원하기 때문에 Fetch 를 지원하지 않는다 따라서 WHATWG 에서 제공하는 Fetch Polyfill 을 사용해야한다. WHATWG 는 W3C 와의 웹 표준 전쟁에서 승리한 단체이며, 현재 Web API 의 표준은 WHATWG 가 관리한다.
+즉, Fetch API 는 Babel 을 통한 폴리필이 불가능하다. Babel 은 Ecmascript 스펙만 지원하기 때문에 Fetch 를 지원하지 않는다 따라서 WHATWG 에서 제공하는 Fetch Polyfill 을 사용해야한다. WHATWG 는 W3C 와의 웹 표준 전쟁에서 승리한 단체이며, 현재 Web API 의 표준은 WHATWG 가 관리한다.
 
-&nbsp; Web API 는 실행 환경이 Web 이며, WHATWG 에서 표준을 관리한다. 예시로는 console, setTimeout, fetch, XMLHttpRequest 이 있다. JavaScript 는 실행 환경이 JS Engine 이며, ECMAScript 에서 표준을 관리한다. 예시로는 map, reduce, forEach, class 가 있다. ECMAScript 는 스크립트 언어가 어떻게 생겨야 하는지에 대한 사양을 스펙으로 명시한다.
+Web API 는 실행 환경이 Web 이며, WHATWG 에서 표준을 관리한다. 예시로는 console, setTimeout, fetch, XMLHttpRequest 이 있다. JavaScript 는 실행 환경이 JS Engine 이며, ECMAScript 에서 표준을 관리한다. 예시로는 map, reduce, forEach, class 가 있다. ECMAScript 는 스크립트 언어가 어떻게 생겨야 하는지에 대한 사양을 스펙으로 명시한다.
 
 ## 마무리
 
-&nbsp; AJAX 라는 기술에 대한 내용과 등장 배경 그리고 장점과 단점에 대해서 알아봤다. 기술들의 등장 배경을 학습하다보면 항상 비효율적인 문제들을 해결하기 위해 등장했었고, AJAX 또한 어플리케이션의 응답성을 향상시키고 네트워크 대역 손실을 방지하기 위해 등장했다. 비동기 프로그래밍을 구현하기 위해서 반드시 필요한 기술이며, 당연하게 써왔던 것들에 대해 그 등장 배경과 관련한 내용을 학습할 수 있었던 좋은 기회였다.
+AJAX 라는 기술에 대한 내용과 등장 배경 그리고 장점과 단점에 대해서 알아봤다. 기술들의 등장 배경을 학습하다보면 항상 비효율적인 문제들을 해결하기 위해 등장했었고, AJAX 또한 어플리케이션의 응답성을 향상시키고 네트워크 대역 손실을 방지하기 위해 등장했다. 비동기 프로그래밍을 구현하기 위해서 반드시 필요한 기술이며, 당연하게 써왔던 것들에 대해 그 등장 배경과 관련한 내용을 학습할 수 있었던 좋은 기회였다.
