@@ -81,6 +81,8 @@ const MarkdownRenderer = styled.div`
     font-size: 16px;
     line-height: 26px;
     padding: 5px 0;
+    text-align: justify;
+    text-indent: 8px;
   }
 
   // Adjust Horizontal Rule style
