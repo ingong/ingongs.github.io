@@ -14,7 +14,7 @@ const PostHeadWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   height: 210px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 
   @media (max-width: 768px) {
     height: 200px;
