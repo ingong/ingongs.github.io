@@ -13,7 +13,7 @@ const MarkdownRenderer = styled.div`
     'Segoe UI Symbol';
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 637px;
   margin: 0 auto;
   /* padding: 100px 0; */
   word-break: break-all;
@@ -117,19 +117,19 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     line-height: 16px;
     text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     margin: 0 auto;
-    padding-left: 5px;
+    /* padding-left: 5px; */
   }
 
   pre[class*='language-'] {
     tab-size: 2;
     line-height: 16px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 8px;
   }
 

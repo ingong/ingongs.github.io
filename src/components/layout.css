@@ -564,10 +564,14 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: 'Andale Mono', 'Ubuntu Mono', 'Fira Code', 'Consolas', 'Monaco';
+  /* font-family: 'Andale Mono', 'Ubuntu Mono', 'Fira Code', 'Consolas', 'Monaco'; */
+  font-family: 'Fira Code';
   padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+
+  line-height: 1.6;
+  font-size: 0.95em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 pre code {
   background: none;
@@ -577,8 +581,8 @@ code:before,
 code:after,
 tt:before,
 tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
+  letter-spacing: -0.5em;
+  content: '';
 }
 pre code:before,
 pre code:after,
