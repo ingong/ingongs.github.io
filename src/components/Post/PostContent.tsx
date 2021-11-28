@@ -15,7 +15,7 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 700px;
   margin: 0 auto;
-  padding: 100px 0;
+  /* padding: 100px 0; */
   word-break: break-all;
 
   // Markdown Style
@@ -25,14 +25,14 @@ const MarkdownRenderer = styled.div`
 
   h2 {
     font-weight: 800;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     font-size: 26px;
   }
 
   h3 {
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 8px;
     font-size: 23px;
   }
@@ -88,7 +88,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Horizontal Rule style
   hr {
     border: 1px solid #000000;
-    margin: 100px 0;
+    /* margin: 20px 0; */
     line-height: 26px;
     font-size: 16px;
     font-weight: 500;
@@ -157,7 +157,7 @@ const MarkdownRenderer = styled.div`
     }
 
     hr {
-      margin: 50px 0;
+      margin: 10px 0;
     }
   }
 `;

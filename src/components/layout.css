@@ -149,7 +149,6 @@ hr {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
   background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
@@ -351,7 +350,7 @@ ul {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 10px;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -363,7 +362,7 @@ ol {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 10px;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -395,7 +394,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 5px;
 }
 pre {
   margin-left: 0;
@@ -497,13 +496,13 @@ ul li {
 }
 li > ol {
   margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: calc(1.45rem / 4);
+  margin-top: calc(1.45rem / 4);
 }
 li > ul {
   margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: calc(1.45rem / 4);
+  margin-top: calc(1.45rem / 4);
 }
 blockquote *:last-child {
   margin-bottom: 0;
