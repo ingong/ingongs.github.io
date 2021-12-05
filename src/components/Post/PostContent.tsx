@@ -39,7 +39,7 @@ const MarkdownRenderer = styled.div`
 
   h4 {
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 8px;
     font-size: 20px;
   }
@@ -115,9 +115,9 @@ const MarkdownRenderer = styled.div`
 
   code[class*='language-'] {
     tab-size: 2;
-    line-height: 13px;
+    line-height: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     margin: 20px 0;
     font-family: 'Noto Sans KR', sans-serif;
@@ -129,7 +129,7 @@ const MarkdownRenderer = styled.div`
     line-height: 16px;
     font-size: 14px;
     font-weight: 400;
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 20px;
     border-radius: 0.6em;
   }
