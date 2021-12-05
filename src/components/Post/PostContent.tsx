@@ -17,9 +17,9 @@ const MarkdownRenderer = styled.div`
   margin: 0 auto;
   /* padding: 100px 0; */
   word-break: break-all;
-
+  text-shadow: 0 0 0.1px rgb(0 0 0 / 30%)
   // Markdown Style
-  line-height: 26px;
+  line-height: 20px;
   font-size: 16px;
   font-weight: 400;
 
@@ -77,12 +77,12 @@ const MarkdownRenderer = styled.div`
   }
 
   p {
-    font-weight: 550;
+    font-weight: 500;
     font-size: 16px;
     line-height: 26px;
     padding: 5px 0;
     text-align: justify;
-    text-indent: 8px;
+    /* text-indent: 8px; */
   }
 
   // Adjust Horizontal Rule style
@@ -106,7 +106,7 @@ const MarkdownRenderer = styled.div`
   pre[class*='language-'] {
     margin: 0 auto;
     font-size: 15px;
-
+    
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
       border-radius: 3px;
@@ -115,12 +115,12 @@ const MarkdownRenderer = styled.div`
 
   code[class*='language-'] {
     tab-size: 2;
-    line-height: 16px;
+    line-height: 13px;
     text-align: center;
     font-size: 16px;
     font-weight: 400;
-    margin: 0 auto;
-    font-family: 'Fira Code,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace';
+    margin: 20px 0;
+    font-family: 'Noto Sans KR', sans-serif;
     /* padding-left: 5px; */
   }
 
@@ -129,9 +129,9 @@ const MarkdownRenderer = styled.div`
     line-height: 16px;
     font-size: 14px;
     font-weight: 400;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 0.6em;
   }
 
   // Markdown Responsive Design
