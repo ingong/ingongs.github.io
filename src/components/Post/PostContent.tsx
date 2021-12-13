@@ -117,9 +117,10 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     line-height: 16px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     margin: 0 auto;
+    font-family: 'Fira Code,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace';
     /* padding-left: 5px; */
   }
 

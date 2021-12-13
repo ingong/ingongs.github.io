@@ -1,5 +1,5 @@
 ---
-date: '2021-10-12'
+date: '2021-12-07'
 title: 'FE 상태관리 - 상태관리의 대상과 구조'
 categories: ['FE']
 summary: '부스트캠프 Web23팀 프로젝트인 협업은 애자일 방법론으로 프로젝트를 진행할 때 발생하는 이슈(에픽, 스토리, 테스크) 를 관리하기 위한 협업툴이다. 우리는 상태 관리의 복잡도를 낮추고, 좋은 UX 를 제공하자는 목표를 세웠다. 이번 글에서는 상태 관리에 대한 우리의 고민을 작성해보려 한다'
@@ -53,19 +53,19 @@ thumbnail: './test.png'
 ### 개선한 상태 관리 구조
 
 ```tsx
-// epic
+## Epic
 {
 	"project":[{epics}, {anotherEpics}],
 	"anotherProject":[{epics}, {anotherEpics}],
 }
 
-// story
+## Story
 {
 	"project":[{story}, {otherstory}, ...],
 	"anotherproject":[{story}, {otherstory}, ...],
 }
 
-// task
+## Task
 {
 	"project":[{task}, {othertask}, ...],
 	"anotherproject":[{task}, {othertask}, ...],
@@ -77,10 +77,15 @@ projectId 를 키로 가지고 있고 배열로 관리해야했기 때문에 하
 ### 최종 상태 관리 구조
 
 ```tsx
-// epicList
-[{ epic }, { epic }, { epic }, { epic }, { epic }];
+## EpicList
+const epicList = [{ epic }, { epic }, { epic }, { epic }, { epic }];
 
-// epic
+
+## StoryList
+const storyList = [{ story }, { story }, { story }, { story }, { story }, { story }];
+
+
+## Epic
 type EpicType = {
   id: number;
   projectId: number;
@@ -90,10 +95,8 @@ type EpicType = {
   order: number;
 };
 
-// storyList
-[{ story }, { story }, { story }, { story }, { story }, { story }];
 
-// story
+## Story
 type StoryType = {
   id: number;
   projectId: number;
@@ -108,4 +111,4 @@ type StoryType = {
 
 ## 마무리
 
-6주간 우리는 이 상태를 씹고, 뜯고, 맛 보았다. 우리 프로젝트의 목표는 실시간 상태 관리였다. 한 사용자의 상태 변화가 다른 사용자가 새로고침하지 않아도 실시간으로 반영되게 하였고, 소켓과 API 를 적절히 활용해서 구현할 수 있었다. 실시간으로 상태를 반영하다보니, 불필요한 상태가 함께 자주 변경된다면 사용자 입장에서도 불편함을 느낄 수 있을 것이라고 생각했다. 이 고민들을 해결하기 위해 상태 관리의 대상과 구조를 고민했고 해결했다. 우리의 선택에 대한 근거를 제시하자는 목표로 논의를 시작했는데, 문제도 해결하고 근거도 만들 수 있었던 과정이였던 것 같다.
+6주간 우리는 이 상태를 씹고, 뜯고, 맛 보았다. 우리 프로젝트의 목표는 실시간 상태 관리였다. 한 사용자의 상태 변화가 다른 사용자가 새로고침하지 않아도 실시간으로 반영되게 하였고, 소켓과 API 를 적절히 활용해서 구현할 수 있었다. 실시간으로 상태를 반영하다보니, 불필요한 상태가 함께 자주 변경된다면 사용자 입장에서도 불편함을 느낄 수 있을 것이라고 생각했다. 이 고민들을 해결하기 위해 상태 관리의 대상과 구조를 고민했고 해결했다. 우리의 선택에 대한 근거를 제시하자는 목표로 논의를 시작했는데, 문제도 해결하고 근거도 만들 수 있었던 과정이였다.
