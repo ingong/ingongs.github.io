@@ -16,6 +16,7 @@ const PostHeadInfoWrapper = styled.div`
   margin: 0 auto;
   padding: 60px 0;
   color: #000;
+  word-break: break-all;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -32,9 +33,10 @@ const Title = styled.div`
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 45px;
+  font-size: 42px;
   font-weight: 800;
-
+  word-break: break-all;
+  word-wrap: normal;
   @media (max-width: 768px) {
     font-size: 30px;
   }
